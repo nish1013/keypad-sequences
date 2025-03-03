@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "test": "jest",
     "format": "prettier --write .",
-    "lint": "prettier --check ."
+    "lint": "prettier --check .",
+    "clean": "rm -rf dist"
   },
   "keywords": [],
   "author": "",
