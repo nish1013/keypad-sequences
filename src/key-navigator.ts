@@ -7,7 +7,10 @@ export class KeyNavigator {
    */
   public static getValidKnightMoves(startKey: string): { startKey: string; validMoves: string[] } {
     const position = this.findKeyPosition(startKey);
-    if (!position) throw new Error(`Key '${startKey}' not found on keypad`);
+    if (!position) {
+      throw new Error(`Key '${startKey}' not found on keypad`);
+    }
+
     const validMoves = this.computeValidMoves(position);
     console.log(
       `Key: ${startKey} found at position (${position.row}, ${position.col}). Valid moves: ${validMoves.join(', ')}`
@@ -21,7 +24,9 @@ export class KeyNavigator {
   private static findKeyPosition(key: string): { row: number; col: number } | null {
     for (let row = 0; row < KEYPAD.length; row++) {
       for (let col = 0; col < KEYPAD[row].length; col++) {
-        if (KEYPAD[row][col] === key) return { row, col };
+        if (KEYPAD[row][col] === key) {
+          return { row, col };
+        }
       }
     }
     return null;
