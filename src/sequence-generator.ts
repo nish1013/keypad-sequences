@@ -39,7 +39,10 @@ export class SequenceGenerator {
   ): number {
     if (length === 10) return 1;
     const memoKey = `${currentKey}-${length}-${vowelCount}`;
-    if (memo.has(memoKey)) return memo.get(memoKey)!;
+    if (memo.has(memoKey)) {
+      return memo.get(memoKey)!;
+    }
+
     let count = 0;
     const nextMoves = KeyNavigator.getValidKnightMoves(currentKey).validMoves;
     for (const nextKey of nextMoves) {
